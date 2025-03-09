@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@font-face {
+    font-family: 'Sporty';
+    src: url('../fonts/sporty-pro-regular-xp.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Sporty Bold';
+    src: url('../fonts/sporty-pro-xbold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* Define color variables */
+:root, .dark, .dark-theme, .invert-theme {
+    --geist-foreground: #fff;
+    --geist-background: #000;
+    --geist-secondary: #002200;
+    --geist-primary: #00ff00;
+    --accents-8: #fafafa;
+    --accents-7: #eaeaea;
+    --accents-6: #999999;
+    --accents-5: #888888;
+    --accents-4: #666666;
+    --accents-3: #444444;
+    --accents-2: #333333;
+    --accents-1: #111111;
+    --geist-marketing-gray: var(--accents-1);
+    --geist-code: var(--geist-foreground);
+    --geist-error-light: #ff3333;
+    --geist-error: #ff0000;
+    --geist-error-dark: #e60000;
+    --geist-text-gradient: linear-gradient(180deg, #ffffff, rgba(255, 255, 255, 0.75));
+    --dropdown-box-shadow: 0 0 0 1px var(--accents-2);
+    --dropdown-triangle-stroke: #333;
+    --scroller-start: rgba(0, 0, 0, 1);
+    --scroller-end: rgba(0, 0, 0, 0);
+    --header-import-flow-background: rgba(17, 17, 17, 0.8);
+    --geist-violet-background: #291d3a;
+    --geist-violet-background-secondary: #211830;
+    --geist-violet-background-tertiary: #211830;
+    --geist-background-rgb: 0, 0, 0;
+    --geist-foreground-rgb: 255, 255, 255;
+    --geist-console-header: #0f0310;
+    --geist-console-purple: #8a63d2;
+    --geist-console-text-color-default: var(--geist-foreground);
+    --geist-console-text-color-blue: #3291ff;
+    --geist-console-text-color-pink: #eb367f;
+    --next-icon-border: #fff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif !important;
+    /* background-color: var(--geist-background); */
+    background: rgb(2,0,36);
+    background: radial-gradient(circle, rgb(0, 0, 0) 0%, rgba(0,0,0,1) 17%, rgba(0,4,0,1) 47%, rgba(0,0,0,1) 74%, rgba(0,36,8,1) 100%);
+}
+
+/* .background-img {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.95), rgba(0, 36, 8, 0.95)), url('../img/rmxbg.jpg');
+} */
+
+.sporty {
+    font-family: 'Sporty' !important;
+}
+
+button {
+    background-color: var(--accents-3);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--accents-2);
+}
+
+.font-poppins {
+    font-family: 'Poppins', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 1rem !important;
+}
+
+label,div {
+    font-family: 'Poppins', sans-serif;
+    color: var(--accents-7);
+}
+
+#submenu {
+    color: var(--accents-7);
+    padding-right: 10px;
+}
+
+p,a {
+    line-height: 1.7;
+    color: var(--accents-5) !important;
+    text-decoration: none;
+}
+
+label,div {
+    color: var(--geist-foreground);
+}
+
+a:hover {
+    color: var(--geist-foreground) !important;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    h4 {
+        font-size: 1.25rem;
+    }
+
+    h5 {
+        font-size: 1rem;
+    }
+
+    h6 {
+        font-size: 0.875rem;
+    }
+
+    p {
+        font-size: 0.875rem;
+    }
+}
+
+/* Custom Tags */
+.hover\:bg-gray-700:hover {
+    background-color: var(--accents-2) !important;
+}
+
+.border-b {
+    border: .10px solid var(--accents-2) !important;
+}
+
+.group:hover .group-hover\:block,
+.group-hover:hover .group-hover\:block {
+    display: block;
+}
+
+.group:hover > .group-hover\:block {
+    display: block;
+    margin-top: -1px;
+}
+
+.group-hover\:block a {
+    width: 100%;
+}
+
+.group:last-child .group-hover\:block {
+    left: auto;
+    right: 0;
+}
+
+/* Branding Green Button */
+.branding-green-button {
+    background: linear-gradient(90deg, #00ff00, #00cc00);
+    border-radius: 30px;
+    color: var(--accents-1) !important;
+    padding: 8px 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    border: none;
+}
+
+.branding-green-button:hover {
+    background: linear-gradient(90deg, #00cc00, #009900);
+}
+
+.text-gradient {
+    color: linear-gradient(90deg, #00cc00, #009900) !important;
+}
+
+@media(max-width: 1024px) {
+    .engrave-image-img {
+        margin-bottom: -27% !important;
+        width: 500px !important;
+    }
+}
