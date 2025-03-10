@@ -61,21 +61,23 @@
 body {
     font-family: 'Poppins', sans-serif !important;
     /* background-color: var(--geist-background); */
-    background: rgb(2,0,36);
-    background: radial-gradient(circle, rgb(0, 0, 0) 0%, rgba(0,0,0,1) 17%, rgba(0,4,0,1) 47%, rgba(0,0,0,1) 74%, rgba(0,36,8,1) 100%);
+    /* background: rgb(2,0,36);
+    background: radial-gradient(circle, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 1) 17%, rgba(0, 4, 0, 1) 47%, rgba(0, 0, 0, 1) 74%, rgb(28 28 28) 100%); */
+    background: black;
 }
 
-/* .background-img {
+.background-img {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh;
-    width: 100vw;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     background-image: linear-gradient(rgba(0, 0, 0, 0.95), rgba(0, 36, 8, 0.95)), url('../img/rmxbg.jpg');
-} */
+}
 
 .sporty {
     font-family: 'Sporty' !important;
@@ -100,7 +102,7 @@ button:hover {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Poppins', sans-serif;
-    margin-bottom: 1rem !important;
+    /* margin-bottom: 1rem !important; */
 }
 
 label,div {
@@ -205,9 +207,132 @@ a:hover {
     color: linear-gradient(90deg, #00cc00, #009900) !important;
 }
 
+.text-white {
+    --tw-text-opacity: 1;
+    color: rgba(255, 255, 255, var(--tw-text-opacity)) !important;
+}
+
+/* Swiper Custom Styles */
+.swiper-button-next,
+.swiper-button-prev {
+    color: var(--geist-primary) !important;
+    width: 20px !important;
+    height: 20px !important;
+    padding: 12px !important;
+    background: black !important;
+    border-radius: 50% !important;
+    border: 1px solid !important;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 14px !important;
+    font-weight: bold !important;
+    background: black !important;
+}
+
+.swiper-pagination-bullet {
+    background: var(--geist-primary) !important;
+    width: 8px !important;
+    height: 8px !important;
+}
+
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+    bottom: var(--swiper-pagination-bottom, 30px) !important;
+}
+
+/* .swiper-pagination {
+    margin-top: 2rem;
+} */
+
+/* .newsSwiper {
+    padding-bottom: 4rem !important;
+} */
+
+.swiper-slide {
+    height: auto !important;
+}
+
+/* News Swiper */
+
+.newsIndexSwiper {
+    padding-bottom: 4rem !important;
+}
+
+.newsIndexSwiper .swiper-slide {
+    height: auto !important;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    border: 1px solid var(--geist-primary);
+}
+
+.newsIndexSwiper .swiper-button-next,
+.newsIndexSwiper .swiper-button-prev {
+    color: var(--geist-primary) !important;
+    width: 20px !important;
+    height: 20px !important;
+}
+
+.newsIndexSwiper .swiper-button-next:after,
+.newsIndexSwiper .swiper-button-prev:after {
+    font-size: 16px !important;
+    font-weight: bold;
+}
+
+.newsIndexSwiper .swiper-pagination-bullet {
+    background: var(--geist-primary) !important;
+}
+
+/* Streamer Swiper */
+.streamersSwiper {
+    padding-bottom: 50px !important;
+}
+
+.streamersSwiper .swiper-slide {
+    height: auto;
+}
+
+.streamersSwiper .swiper-button-next,
+.streamersSwiper .swiper-button-prev {
+    color: var(--geist-primary);
+}
+
+.streamersSwiper .swiper-pagination-bullet {
+    background: var(--geist-primary);
+}
+
+.streamersSwiper .swiper-pagination-bullet-active {
+    background: var(--geist-primary);
+}
+
+/* Hover effect to pause autoplay */
+.streamersSwiper:hover .swiper-button-next,
+.streamersSwiper:hover .swiper-button-prev {
+    opacity: 1;
+}
+
+.streamersSwiper .swiper-button-next,
+.streamersSwiper .swiper-button-prev {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.badge-glow {
+    animation: glow 2s infinite;
+}
+
+@keyframes glow {
+    0%, 100% {
+        filter: drop-shadow(0 0 2px currentColor);
+    }
+    50% {
+        filter: drop-shadow(0 0 6px currentColor);
+    }
+}
 @media(max-width: 1024px) {
     .engrave-image-img {
         margin-bottom: -27% !important;
         width: 500px !important;
     }
 }
+

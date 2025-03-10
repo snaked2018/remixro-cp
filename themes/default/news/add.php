@@ -2,13 +2,26 @@
 if (!defined('FLUX_ROOT')) exit;
 $this->loginRequired();
 ?>
-<script src="https://cdn.tiny.cloud/1/<?php echo $tinymce_key ?>/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/u2b3rbrupspn3upncne7vix16tacb82668pzcxc7x0f5g4aw/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
 <script>
     tinymce.init({
-        selector: "textarea",
-        skin: "bootstrap",
-        plugins: "anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage advtemplate mentions tableofcontents footnotes autocorrect typography inlinecss",
-        toolbar: "undo redo | blocks | bold italic | align | checklist numlist bullist indent outdent | link image | emoticons charmap | removeformat",
+        selector: 'textarea[name="news_body"]',
+        plugins: [
+            'anchor', 'autolink', 'charmap', 'codesample', 'emoticons', 'image', 
+            'link', 'lists', 'media', 'searchreplace', 'table', 'visualblocks', 
+            'wordcount', 'checklist', 'mediaembed', 'casechange', 'export', 
+            'formatpainter', 'pageembed', 'a11ychecker', 'tinymcespellchecker', 
+            'permanentpen', 'powerpaste', 'advtable', 'advcode', 'editimage', 
+            'advtemplate', 'mentions', 'tableofcontents', 'footnotes', 
+            'autocorrect', 'typography', 'inlinecss', 'markdown'
+        ],
+        toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
+        height: 400,
+        menubar: true,
+        branding: false,
+        promotion: false,
+        images_upload_url: 'postAcceptor.php',
+        automatic_uploads: true
     });
 </script>
 <h2><?php echo htmlspecialchars(Flux::message('CMSNewsAddTitle')) ?></h2>
@@ -25,7 +38,7 @@ $this->loginRequired();
         <tr>
             <th><label for="news_body"><?php echo htmlspecialchars(Flux::message('CMSNewsBodyLabel')) ?></label></th>
             <td colspan="2">
-				<textarea name="news_body" cols="70"><?php echo htmlspecialchars($body) ?></textarea>
+				<textarea name="news_body" id="news_body"><?php echo htmlspecialchars($body) ?></textarea>
 			</td>
         </tr>
 		<tr>

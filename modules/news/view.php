@@ -1,12 +1,27 @@
 <?php
 if (!defined('FLUX_ROOT')) exit;
 
-$news = Flux::config('FluxTables.CMSNewsTable'); 
+$id = $params->get('id');
+$title = 'View News';
 
-$sql = "SELECT title, body, link, author, created, modified FROM {$server->loginDatabase}.$news ORDER BY id DESC LIMIT ?";
+if (!$id) {
+    $this->redirect($this->url('news'));
+}
 
+$newsTable = Flux::config('FluxTables.CMSNewsTable');
+// Get current news item
+$sql = "SELECT * FROM {$server->loginDatabase}.$newsTable WHERE id = ?";
 $sth = $server->connection->getStatement($sql);
-$sth->execute(array((int)Flux::config('CMSNewsLimit')));
+$sth->execute(array($id));
+$currentNews = $sth->fetch();
 
-$news = $sth->fetchAll();
+if (!$currentNews) {
+    $this->redirect($this->url('news'));
+}
+
+// Get all news for slider
+$sql = "SELECT * FROM {$server->loginDatabase}.$newsTable ORDER BY created DESC";
+$sth = $server->connection->getStatement($sql);
+$sth->execute();
+$allNews = $sth->fetchAll();
 ?>

@@ -2,8 +2,8 @@
 // This is the application configuration file. All values have been set to
 // the default, and should be changed as needed.
 return array(
-	'ServerAddress'				=> 'localhost:8888/',				// This value is the hostname:port under which Flux runs. (e.g., example.com or example.com:80)
-	'BaseURI'					=> 'fluxcp',						// The base URI is the base web root on which your application lies.
+	'ServerAddress'				=> 'localhost/',				// This value is the hostname:port under which Flux runs. (e.g., example.com or example.com:80)
+	'BaseURI'					=> 'remixrosite',						// The base URI is the base web root on which your application lies.
 	'InstallerPassword'			=> 'kadangkadang',		// Installer/updater password.
 	'RequireOwnership'			=> true,					// Require the executing user to be owner of the FLUX_ROOT/data/ directory tree? (Better for security)
 															// WARNING: This will be mostly IGNORED on non-POSIX-compliant OSes (e.g. Windows).
@@ -269,13 +269,13 @@ return array(
 		//	'LogoutTitle'		=> array('module' => 'account', 'action' => 'logout'),
 		//),
 		'DonationsLabel'		=> array(
-			'PurchaseLabel'		=> array('module' => 'purchase'),
+			'PayoutLabel'		=> array('module' => 'payout'),
 			'DonateLabel'		=> array('module' => 'donate'),
 			'MarketplaceLabel'	=> array('module' => 'marketplace'),
 		),
 		'InformationLabel'	=> array(
 			//'ServerInfoLabel'	=> array('module' => 'server', 'action' => 'info'),
-			'ServerStatusLabel'	=> array('module' => 'server', 'action' => 'status'),
+			//'ServerStatusLabel'	=> array('module' => 'server', 'action' => 'status'),
 			'WoeHoursLabel'		=> array('module' => 'woe'),
 			'CastlesLabel'		=> array('module' => 'castle'),
 			//'WhosOnlineLabel'	=> array('module' => 'character', 'action' => 'online'),

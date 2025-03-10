@@ -1,7 +1,7 @@
 <?php
 if (!defined('FLUX_ROOT')) exit;
 ?>
-<script src="https://cdn.tiny.cloud/1/<?php echo $tinymce_key ?>/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/u2b3rbrupspn3upncne7vix16tacb82668pzcxc7x0f5g4aw/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
 <script>
     tinymce.init({
         selector: "textarea",

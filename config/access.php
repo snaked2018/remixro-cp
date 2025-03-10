@@ -178,6 +178,7 @@ return array(
 			'add' 			=>  AccountLevel::ADMIN,
 			'edit' 			=>  AccountLevel::ADMIN,
 			'delete' 		=> AccountLevel::ADMIN,
+			'ajax-view' => array('allow' => true)
 		),
 		'servicedesk'=> array(
 			'index'			=> AccountLevel::NORMAL,

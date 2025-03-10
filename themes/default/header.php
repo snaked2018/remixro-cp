@@ -14,21 +14,28 @@
         <?php endif ?>
         <title><?php echo Flux::config('SiteTitle'); if (isset($title)) echo ": $title" ?></title>
         <link rel="icon" type="image/x-icon" href="./favicon.ico" />
-        <link rel="stylesheet" href="<?php echo $this->themePath('css/remix.css') ?>" type="text/css" media="screen" title="" charset="utf-8" />
+        <!-- Release Mode -->
+        <!-- <link rel="stylesheet" href="<?php echo $this->themePath('css/remix.css') ?>" type="text/css" media="screen" title="" charset="utf-8" /> -->
+         <!-- Development Mode -->
+        <link rel="stylesheet" href="<?php echo $this->themePath('css/remix.css') ?>?v=<?php echo time(); ?>" type="text/css" media="screen" title="" charset="utf-8" />
         <?php if (Flux::config('EnableReCaptcha')): ?>
             <script src='https://www.google.com/recaptcha/api.js'></script>
         <?php endif ?>
         <!-- Tailwind CSS -->
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
         <!-- Poppins Font -->
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-        <!-- Heroicons -->
-        <link href="https://unpkg.com/@heroicons/react@1.0.6/outline/index.js" rel="stylesheet">    
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+        <!-- Swiper CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+        <!-- Swiper JS -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <!-- Axios for AJAX requests -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
     </head>
     <body>
-    <!-- Fixed navbar -->
+
     <?php include $this->themePath('main/navbar.php', true) ?>
-        <div style="margin-top: 60px;">
+        <div style="margin-top: 80px;">
             <?php if (Flux::config('DebugMode') && @gethostbyname(Flux::config('ServerAddress')) == '127.0.0.1'): ?>
                 <p class="notice text-red-500">Please change your <strong>ServerAddress</strong> directive in your application config to your server's real address (e.g., myserver.com).</p>
             <?php endif ?>
@@ -46,5 +53,3 @@
 
             <!-- Credit balance -->
             <?php //if (in_array($params->get('module'), array('donate', 'purchase'))) include 'main/balance.php' ?>
-        </div>
-    </body>
