@@ -92,16 +92,16 @@ return array(
 	'ColumnSortDescending'		=> ' ▼',					// (Visual) Text displayed for descending sorted column names.
 	'DisplayCashPoints'			=> false,					// Whether or not to display "Cash Points" instead of the player's "Credits" in the control panel.
 	'CreditExchangeRate'		=> 1.0,						// The rate at which credits are exchanged for dollars.
-	'MinDonationAmount'			=> 2.0,						// Minimum donation amount. (NOTE: Actual donations made that are less than this account won't be exchanged)
-	'DonationCurrency'			=> 'USD',					// Preferred donation currency. Only donations made in this currency will be processed for credit deposits.
+	'MinDonationAmount'			=> 50.0,						// Minimum donation amount. (NOTE: Actual donations made that are less than this account won't be exchanged)
+	'DonationCurrency'			=> 'PHP',					// Preferred donation currency. Only donations made in this currency will be processed for credit deposits.
 	'MoneyDecimalPlaces'		=> 2,						// (Visual) Number of decimal places to display in amount.
 	'MoneyThousandsSymbol'		=> ',',						// (Visual) Thousandths place separator (a period in European currencies).
 	'MoneyDecimalSymbol'		=> '.',						// (Visual) Decimal separator (a comma in European currencies).
 	'AcceptDonations'			=> true,					// Whether or not to accept donations.
-	'PayPalIpnUrl'				=> 'www.paypal.com',		// The ipnpb.paypal.com and ipnpb.sandbox.paypal.com endpoints only accept HTTPS connections. If you currently use www.paypal.com, you should move to ipnpb.paypal.com when you update your code to use HTTPS.
-	'PayPalBusinessEmail'		=> 'admin@localhost',		// Enter the e-mail under which you have registered your business account.
+	'PayPalIpnUrl'				=> '',		// The ipnpb.paypal.com and ipnpb.sandbox.paypal.com endpoints only accept HTTPS connections. If you currently use www.paypal.com, you should move to ipnpb.paypal.com when you update your code to use HTTPS.
+	'PayPalBusinessEmail'		=> '',		// Enter the e-mail under which you have registered your business account.
 	'PayPalReceiverEmails'		=> array(					// These are the receiver e-mail addresses who are allowed to receive payment.
-		//'admin2@localhost',								// -- This array may be empty if you only use one e-mail
+		'',								// -- This array may be empty if you only use one e-mail
 		//'admin3@localhost'								// -- because your Business Email is also checked.
 	),
 	'PaypalHackNotify'          => true,                    // Send email notification if hack attempt detected (Notification will be send for each address in list PayPalBusinessEmail and PayPalReceiverEmails)
@@ -120,6 +120,10 @@ return array(
 		'173.0.80.0/20',
 		'91.243.72.0/23'
 	),
+	'PayPalClientId' => 'AXi-uPpTpyTpdAqU-AHhRiQrOMcjyrCwbdxdQeYvojbRogsGw4-gmK9JbCDHw4o3M5mWe_Y-RBkz56ge',
+	'PayPalClientSecret' => 'ELkDSa4hQGPZC56ZnLk1l7Hg4YYtFImAN95HgWYrddN7kLGqsxUkb4PLHxYRAhaoC-CBLjs4B7x1HpZI',
+	// PayPal Configuration
+	'PayPalSandbox'      => true,                    // Set to false for production
 	'GStorageLeaderOnly'		=> false,					// Only allow guild leader to view guild storage rather than all members?
 	'DivorceKeepChild'			=> false,					// Keep child after divorce?
 	'DivorceKeepRings'			=> false,					// Keep wedding rings after divorce?
@@ -143,7 +147,7 @@ return array(
 		'Reversed',											// -- 'Reversed'
 	),
 
-	'HoldUntrustedAccount'		=> 0,						// This is the time in hours to hold a donation crediting process for, if the account
+	'HoldUntrustedAccount'		=> 6,						// This is the time in hours to hold a donation crediting process for, if the account
 															// isn't a trusted account. Specify 0 or false to disable this feature.
 
 	'AutoUnholdAccount'			=> false,					// Enable this to auto-unhold an account and credit it if the transaction is still

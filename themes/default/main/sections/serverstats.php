@@ -18,9 +18,9 @@
                 <div class="grid grid-cols-1 gap-4">
                     <?php
                     $guild_rankings = [
-                        ['guild' => 'Game Master', 'points' => 99, 'castles' => 0, 'members' => 1, 'emblem' => 'default_emblem.gif'],
-                        ['guild' => 'Game Master', 'points' => 99, 'castles' => 0, 'members' => 1, 'emblem' => 'default_emblem.gif'],
-                        ['guild' => 'Game Master', 'points' => 99, 'castles' => 0, 'members' => 1, 'emblem' => 'default_emblem.gif']
+                        ['guild' => 'Game Master', 'points' => 99, 'castles' => 0, 'members' => 1, 'emblem' => 'default_emblem.bmp'],
+                        ['guild' => 'Game Master', 'points' => 99, 'castles' => 0, 'members' => 1, 'emblem' => 'default_emblem.bmp'],
+                        ['guild' => 'Game Master', 'points' => 99, 'castles' => 0, 'members' => 1, 'emblem' => 'default_emblem.bmp']
                     ];
                     foreach ($guild_rankings as $index => $guild): ?>
                     <div class="flex items-center justify-between p-4 md:p-4 bg-gray-900/50 rounded-lg">
@@ -38,7 +38,7 @@
                                             src="<?php echo $this->themePath('img/emblem/' . htmlspecialchars($guild['emblem'])) ?>" 
                                             alt="<?php echo htmlspecialchars($guild['guild']) ?> emblem"
                                             class="w-6 h-6 md:w-10 md:h-10 object-contain"
-                                            onerror="this.onerror=null; this.src='<?php echo $this->themePath('img/emblem/default_emblem.gif') ?>'"
+                                            onerror="this.onerror=null; this.src='<?php echo $this->themePath('img/emblem/default_emblem.bmp') ?>'"
                                         />
                                     <?php else: ?>
                                         <div class="text-green-400/50 text-base md:text-2xl">

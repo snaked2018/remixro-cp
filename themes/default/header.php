@@ -14,6 +14,8 @@
         <?php endif ?>
         <title><?php echo Flux::config('SiteTitle'); if (isset($title)) echo ": $title" ?></title>
         <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+        <!-- Poppins Font -->
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
         <!-- Release Mode -->
         <!-- <link rel="stylesheet" href="<?php echo $this->themePath('css/remix.css') ?>" type="text/css" media="screen" title="" charset="utf-8" /> -->
          <!-- Development Mode -->
@@ -21,16 +23,26 @@
         <?php if (Flux::config('EnableReCaptcha')): ?>
             <script src='https://www.google.com/recaptcha/api.js'></script>
         <?php endif ?>
+        <!-- Jquery -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
         <!-- Tailwind CSS -->
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-        <!-- Poppins Font -->
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
         <!-- Swiper CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
         <!-- Swiper JS -->
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
         <!-- Axios for AJAX requests -->
         <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
+        <!-- Alphine JS -->
+        <script defer src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <!-- Toastify JS -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+        <!-- Paymongo API -->
+        <script src="https://js.paymongo.com/v1"></script>
+        <!-- Paypal SDK -->
+        <script src="https://www.paypal.com/sdk/js?client-id=<?php echo Flux::config('PayPalClientId') ?>&currency=<?php echo strtoupper(Flux::config('DonationCurrency')) ?>"></script>
     </head>
     <body>
 
