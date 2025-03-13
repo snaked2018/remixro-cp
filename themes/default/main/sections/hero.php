@@ -13,13 +13,13 @@
                 <?php echo htmlspecialchars(Flux::message('WelcomeSubGradient')) ?>
             </p>
             <div class="my-5 sm:my-10 flex items-center justify-center gap-x-6 lg:justify-start">
-                <button onclick="openDownloadModal()" class="branding-green-button flex items-center gap-x-2">
+                <a href="?module=rmx&action=download" class="branding-green-button flex items-center gap-x-2">
                     <span>Download now</span>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
                     </svg>
-                </button>
-                <a href="#" class="text-sm/6 font-semibold text-white">
+                </a>
+                <a href="?module=marketplace" class="text-sm/6 font-semibold text-white">
                     Visit Marketplace <span aria-hidden="true">→</span>
                 </a>
             </div>

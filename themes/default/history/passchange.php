@@ -1,29 +1,76 @@
-<?php if (!defined('FLUX_ROOT')) exit ?>
-<h2><?php echo htmlspecialchars(Flux::message('HistoryPassChangeHeading')) ?></h2>
-<?php if ($changes): ?>
-<?php echo $paginator->infoText() ?>
-<table class="horizontal-table">
-	<tr>
-		<th><?php echo $paginator->sortableColumn('change_date', Flux::message('HistoryPassChangeChangeDate')) ?></th>
-		<th><?php echo $paginator->sortableColumn('change_ip', Flux::message('HistoryPassChangeChangeIp')) ?></th>
-	</tr>
-	<?php foreach ($changes as $change): ?>
-	<tr>
-		<td><?php echo htmlspecialchars($change->change_date) ?></td>
-		<td>
-		<?php if ($auth->actionAllowed('account', 'index')): ?>
-			<?php echo $this->linkToAccountSearch(array('last_ip' => $change->change_ip), $change->change_ip) ?>
-		<?php else: ?>
-			<?php echo htmlspecialchars($change->change_ip) ?>
-		<?php endif ?>
-		</td>
-	</tr>
-	<?php endforeach ?>
-</table>
-<?php echo $paginator->getHTML() ?>
-<?php else: ?>
-<p>
-	<?php echo htmlspecialchars(Flux::message('HistoryNoPassChanges')) ?>
-	<a href="javascript:history.go(-1)"><?php echo htmlspecialchars(Flux::message('GoBackLabel')) ?></a>
-</p>
-<?php endif ?>
+<?php if (!defined('FLUX_ROOT')) exit; ?>
+<div class="bg-black py-8 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto">
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <h2 class="text-3xl font-bold text-white">
+                <?php echo htmlspecialchars(Flux::message('HistoryPassChangeHeading')) ?>
+            </h2>
+        </div>
+
+        <?php if ($changes): ?>
+            <!-- Pagination Info -->
+            <div class="mb-4 text-sm text-gray-400">
+                <?php echo $paginator->infoText() ?>
+            </div>
+
+            <!-- Password Changes Table -->
+            <div class="bg-gray-900 rounded-lg shadow-lg border border-gray-700 overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-700">
+                        <thead>
+                            <tr class="bg-gray-800/50">
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">
+                                    <?php echo $paginator->sortableColumn('change_date', Flux::message('HistoryPassChangeChangeDate')) ?>
+                                </th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">
+                                    <?php echo $paginator->sortableColumn('change_ip', Flux::message('HistoryPassChangeChangeIp')) ?>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-700">
+                            <?php foreach ($changes as $change): ?>
+                            <tr class="hover:bg-gray-800/50">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-300">
+                                    <?php echo htmlspecialchars($change->change_date) ?>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm">
+                                    <?php if ($auth->actionAllowed('account', 'index')): ?>
+                                        <a href="<?php echo $this->url('account', 'index', array('last_ip' => $change->change_ip)) ?>"
+                                           class="text-indigo-400 hover:text-indigo-300">
+                                            <?php echo htmlspecialchars($change->change_ip) ?>
+                                        </a>
+                                    <?php else: ?>
+                                        <span class="text-gray-300">
+                                            <?php echo htmlspecialchars($change->change_ip) ?>
+                                        </span>
+                                    <?php endif ?>
+                                </td>
+                            </tr>
+                            <?php endforeach ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="mt-4">
+                <?php echo $paginator->getHTML() ?>
+            </div>
+        <?php else: ?>
+            <!-- No Changes Message -->
+            <div class="text-center py-8 bg-gray-900/50 rounded-lg border border-gray-700">
+                <p class="text-gray-400 mb-4">
+                    <?php echo htmlspecialchars(Flux::message('HistoryNoPassChanges')) ?>
+                </p>
+                <a href="javascript:history.go(-1)" 
+                   class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium 
+                          rounded-md branding-green-button
+                          focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 
+                          transition-colors duration-200">
+                    <?php echo htmlspecialchars(Flux::message('GoBackLabel')) ?>
+                </a>
+            </div>
+        <?php endif ?>
+    </div>
+</div>

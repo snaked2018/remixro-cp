@@ -57,7 +57,7 @@
                 <div class="flex flex-col md:flex-row items-center gap-x-6">
                     <img class="h-16 w-16 rounded-full border-2 border-orange-500" src="<?php echo $this->themePath('img/staff/whin.png') ?>" alt="Sub Developer">
                     <div>
-                        <h3 class="mt-3 text-base sm:text-xl font-semibold leading-7 tracking-tight text-white">[Player]Whin</h3>
+                        <h3 class="mt-3 text-base sm:text-xl font-semibold leading-7 tracking-tight text-white">[Player]-Whin</h3>
                         <p class="text-xs sm:text-sm font-semibold leading-6 text-orange-500">Sub Developer</p>
                     </div>
                 </div>
@@ -66,7 +66,7 @@
                         <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z"/>
                     </svg>
                     <p class="relative mt-6 text-xs sm:text-sm leading-6 text-gray-400 italic pl-8">
-                        "Dedicated to maintaining server stability and fostering a fair gaming environment."
+                        "Balancing the thrill of playing with the passion for development, bringing a unique perspective to server improvements."
                     </p>
                 </div>
                 <div class="mt-4 flex gap-4 justify-center md:justify-start">
@@ -85,14 +85,14 @@
             <!-- Sub-Administrator -->
             <div class="group relative rounded-3xl p-4 sm:p-8 hover:bg-gray-800/50 transition-all duration-300" style="border: 1px solid var(--geist-primary);">
                 <div class="absolute -top-3 -right-3">
-                    <span class="bg-black inline-flex items-center rounded-full bg-orange-500/10 px-3 py-1 text-xs font-medium text-orange-500 ring-1 ring-inset ring-orange-500/20">
+                    <span class="bg-black inline-flex items-center rounded-full bg-pink-500/10 px-3 py-1 text-xs font-medium text-orange-500 ring-1 ring-inset ring-orange-500/20">
                         Sub-Admin
                     </span>
                 </div>
                 <div class="flex flex-col md:flex-row items-center gap-x-6">
-                    <img class="h-16 w-16 rounded-full border-2 border-orange-500" src="<?php echo $this->themePath('img/staff/remix.png') ?>" alt="Sub Administrator">
+                    <img class="h-16 w-16 rounded-full border-2 border-pink-500" src="<?php echo $this->themePath('img/staff/thalia.png') ?>" alt="Sub Administrator">
                     <div>
-                        <h3 class="mt-3 text-base sm:text-xl font-semibold leading-7 tracking-tight text-white">[GM]-Sean</h3>
+                        <h3 class="mt-3 text-base sm:text-xl font-semibold leading-7 tracking-tight text-pink-500">[GM]-Thalia</h3>
                         <p class="text-xs sm:text-sm font-semibold leading-6 text-orange-500">Sub Administrator</p>
                     </div>
                 </div>
@@ -126,7 +126,7 @@
                     </span>
                 </div>
                 <div class="flex flex-col md:flex-row items-center gap-x-6">
-                    <img class="h-16 w-16 rounded-full border-2 border-yellow-500" src="<?php echo $this->themePath('img/staff/remix.png') ?>" alt="Head GM">
+                    <img class="h-16 w-16 rounded-full border-2 border-yellow-500" src="<?php echo $this->themePath('img/staff/lkay.png') ?>" alt="Head GM">
                     <div>
                         <h3 class="mt-3 text-base sm:text-xl font-semibold leading-7 tracking-tight text-yellow-500">[GM]-Titan</h3>
                         <p class="text-xs sm:text-sm font-semibold leading-6 text-yellow-500">Head Game Master</p>
@@ -232,9 +232,9 @@
                     </span>
                 </div>
                 <div class="flex flex-col md:flex-row items-center gap-x-6">
-                    <img class="h-16 w-16 rounded-full border-2 border-purple-500" src="<?php echo $this->themePath('img/staff/remix.png') ?>" alt="Event GM">
+                    <img class="h-16 w-16 rounded-full border-2 border-purple-500" src="<?php echo $this->themePath('img/staff/sean.png') ?>" alt="Event GM">
                     <div>
-                        <h3 class="mt-3 text-base sm:text-xl font-semibold leading-7 tracking-tight text-purple-500">[GM]-Knox</h3>
+                        <h3 class="mt-3 text-base sm:text-xl font-semibold leading-7 tracking-tight text-purple-500">[GM]-Sean</h3>
                         <p class="text-xs sm:text-sm font-semibold leading-6 text-purple-500">Event Game Master</p>
                     </div>
                 </div>
@@ -260,14 +260,14 @@
                 </div>
             </div>
              <!-- Support GM -->
-             <div class="group relative rounded-3xl p-8 hover:bg-gray-800/50 transition-all duration-300" style="border: 1px solid var(--geist-primary);">
+             <!-- <div class="group relative rounded-3xl p-8 hover:bg-gray-800/50 transition-all duration-300" style="border: 1px solid var(--geist-primary);">
                 <div class="absolute -top-3 -right-3">
                     <span class="bg-black inline-flex items-center rounded-full bg-green-500/10 px-3 py-1 text-xs font-medium text-green-500 ring-1 ring-inset ring-purple-500/20">
                         Support-GM
                     </span>
                 </div>
                 <div class="flex flex-col md:flex-row items-center gap-x-6">
-                    <img class="h-16 w-16 rounded-full border-2 border-green-500" src="<?php echo $this->themePath('img/staff/remix.png') ?>" alt="Event GM">
+                    <img class="h-16 w-16 rounded-full border-2 border-green-500" src="<?php echo $this->themePath('img/staff/thalia.png') ?>" alt="Event GM">
                     <div>
                         <h3 class="mt-3 text-base sm:text-xl font-semibold leading-7 tracking-tight text-green-500">[GM]-Thalia</h3>
                         <p class="text-xs sm:text-sm font-semibold leading-6 text-green-500">Support Game Master</p>
@@ -293,7 +293,7 @@
                         </svg>
                     </a>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>

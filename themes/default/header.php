@@ -1,4 +1,7 @@
-<?php if (!defined('FLUX_ROOT')) exit; ?>
+<?php 
+if (!defined('FLUX_ROOT')) exit;
+require_once FLUX_ROOT.'/includes/session_header.php';
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en">
@@ -44,7 +47,7 @@
         <!-- Paypal SDK -->
         <script src="https://www.paypal.com/sdk/js?client-id=<?php echo Flux::config('PayPalClientId') ?>&currency=<?php echo strtoupper(Flux::config('DonationCurrency')) ?>"></script>
     </head>
-    <body>
+    <body class="flex flex-col min-h-screen">
 
     <?php include $this->themePath('main/navbar.php', true) ?>
         <div style="margin-top: 80px;">
@@ -54,7 +57,9 @@
 
             <!-- Messages -->
             <?php if ($message=$session->getMessage()): ?>
-                <p><?php echo htmlspecialchars($message) ?></p>
+                <div style="background-color: var(--geist-primary);">
+                    <p class="text-center px-6 py-3"><?php echo htmlspecialchars($message) ?></p>
+                </div>
             <?php endif ?>
 
             <!-- Sub menu -->

@@ -120,13 +120,4 @@
         </div>
     </div>
 </div>
-
-<script>
-function openDownloadModal() {
-    document.getElementById('downloadModal').classList.remove('hidden');
-}
-
-function closeDownloadModal() {
-    document.getElementById('downloadModal').classList.add('hidden');
-}
-</script>
+<script src="<?php echo $this->themePath('js/download.js') ?>"></script>

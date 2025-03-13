@@ -184,8 +184,7 @@
                                 <div class="space-y-2">
                                     <div class="flex items-center justify-between">
                                         <span class="text-gray-300 text-xs">Cash Rewards Pool</span>
-                                        <span class="text-green-400 text-xs font-medium">20%</span>
-                                    </div>
+                                        <span class="text-green-400 text-xs font-medium">20%</                                    </div>
                                     <div class="flex items-center justify-between">
                                         <span class="text-gray-300 text-xs">Agit Lord Prize</span>
                                         <span class="text-yellow-400 text-xs font-medium">10%</span>
@@ -516,64 +515,41 @@ $(document).ready(function() {
                         currency: details.purchase_units[0].amount.currency_code,
                         status: details.status,
                         email: details.payer.email_address,
-                        purchaseUnits: details.purchase_units[0],  // Add full purchase unit data
+                        purchaseUnits: details.purchase_units[0],
                         paymentSource: data.paymentSource,
                         createTime: details.create_time,
-                        updateTime: details.update_time
+                        updateTime: details.update_time,
+                        token: '<?php echo $session->token ?>' // Add CSRF token
                     };
                     
                     console.log('Sending transaction data to server:', transactionData);
 
-                    return fetch('<?php echo $this->url('donate', 'complete') ?>', {
+                    return fetch('<?php echo $this->url('donate', 'processor') ?>', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
-                            'X-Requested-With': 'XMLHttpRequest'  // Add this header
+                            'X-Requested-With': 'XMLHttpRequest',
+                            'X-CSRF-Token': '<?php echo $session->token ?>'
                         },
                         body: JSON.stringify(transactionData)
                     })
                     .then(response => {
-                        console.log('Raw response:', response);
-                        
-                        // Check if response is OK
                         if (!response.ok) {
+                            if (response.status === 401) {
+                                window.location.href = '<?php echo $this->url('account', 'login') ?>';
+                                throw new Error('Session expired. Please login again.');
+                            }
                             return response.text().then(text => {
-                                console.error('Server error response:', text);
-                                throw new Error(`Server responded with ${response.status}: ${text}`);
+                                throw new Error(`Server error: ${text}`);
                             });
                         }
-                        
-                        // Try to parse JSON
-                        return response.text().then(text => {
-                            console.log('Raw response text:', text);
-                            try {
-                                return JSON.parse(text);
-                            } catch (e) {
-                                console.error('JSON parse error:', e);
-                                console.error('Response text:', text);
-                                throw new Error('Invalid JSON response from server');
-                            }
-                        });
+                        return response.json();
                     })
                     .then(result => {
-                        console.log('Parsed server result:', result);
-                        
                         if (result.success) {
-                            Toastify({
-                                text: "Payment successful! Credits will be added to your account.",
-                                duration: 5000,
-                                gravity: "top",
-                                position: "right",
-                                style: {
-                                    background: "linear-gradient(to right, #10b981, #059669)",
-                                },
-                            }).showToast();
-
-                            setTimeout(() => {
-                                window.location.href = '<?php echo $this->url('donate', 'history') ?>';
-                            }, 2000);
+                            // Redirect to completion page with transaction ID
+                            window.location.href = `<?php echo $this->url('donate', 'complete') ?>?txn=${result.transactionId}`;
                         } else {
-                            console.error('Transaction failed:', result);
                             throw new Error(result.message || 'Transaction verification failed');
                         }
                     })

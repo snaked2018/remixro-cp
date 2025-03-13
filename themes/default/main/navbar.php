@@ -4,12 +4,20 @@
     <div class="flex justify-between items-center">
         <div class="flex flex-row-reverse text-center align-center lg:flex-row w-full justify-between lg:justify-start space-x-4">
             <div class="flex items-center lg:hidden lg:mr-16" style="border: 1px solid #00ff00; padding: 4px 10px; border-radius: 4px;">
-                <button type="button" class="hover:text-white focus:outline-none focus:text-white" aria-label="Toggle navigation" onclick="document.getElementById('mobile-navbar').classList.toggle('hidden')">
-                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <button type="button" 
+                        class="hover:text-white focus:outline-none focus:text-white" 
+                        aria-label="Toggle navigation" 
+                        onclick="toggleMobileNav()">
+                    <!-- Menu Icon -->
+                    <svg id="navMenuIcon" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                     </svg>
+                    <!-- Close Icon -->
+                    <svg id="navCloseIcon" class="h-6 w-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
                 </button>
-                <span class="ml-2 hover:text-white cursor-pointer" onclick="document.getElementById('mobile-navbar').classList.toggle('hidden')">Menu</span>
+                <span class="ml-2 hover:text-white cursor-pointer" onclick="toggleMobileNav()">Menu</span>
             </div>
             <a class="text-2xl md:text-3xl font-bold" href="./" style="margin-right: 16px; color: var(--geist-foreground) !important;" id="typewriter"></a>
             <ul class="hidden lg:flex md:items-center md:space-x-4" id="desktop-navbar">
@@ -66,7 +74,7 @@
                     <a href="https://discord.com/invite/8zQGqWdVgV" class="hover:text-white text-sm" style="color: var(--geist-foreground);">Discord</a>
                 </li>
                 <li>
-                    <a href="/wiki" class="hover:text-white text-sm" style="color: var(--geist-foreground);">Wiki</a>
+                    <a href="https://remixro.gitbook.io/wiki/" class="hover:text-white text-sm" style="color: var(--geist-foreground);">Wiki</a>
                 </li>
             </ul>
         </div>
@@ -103,18 +111,18 @@
         <ul class="flex flex-col space-y-2 mt-4">
             <!-- New Menu Items for Mobile -->
             <li>
-                <button onclick="openDownloadModal()" class="block px-4 py-2 text-sm w-full text-left flex items-center gap-x-2" style="color: var(--geist-foreground);">
+                <a href="?module=rmx&action=download" class="block px-4 py-2 text-sm w-full text-left flex items-center gap-x-2" style="color: var(--geist-foreground);">
                     <span>Download</span>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
                     </svg>
-                </button>
+                </a>
             </li>
             <li>
-                <a href="#discord-section" onclick="event.preventDefault(); document.querySelector('#discord-section').scrollIntoView({behavior: 'smooth'}); document.getElementById('mobile-navbar').classList.add('hidden')" class="block px-4 py-2 text-sm" style="color: var(--geist-foreground);">Discord</a>
+                <a href="https://discord.com/invite/8zQGqWdVgV" class="block px-4 py-2 text-sm" style="color: var(--geist-foreground);">Discord</a>
             </li>
             <li>
-                <a href="/wiki" class="block px-4 py-2 text-sm" style="color: var(--geist-foreground);">Wiki</a>
+                <a href="https://remixro.gitbook.io/wiki/" class="block px-4 py-2 text-sm" style="color: var(--geist-foreground);">Wiki</a>
             </li>
             <?php $menuItems = $this->getMenuItems(); ?>
             <?php if (!empty($menuItems)): ?>
@@ -163,3 +171,4 @@
 </nav>
 
 <script src="<?php echo $this->themePath('js/effects.js') ?>"></script>
+<script src="<?php echo $this->themePath('js/togglenav.js') ?>"></script>
