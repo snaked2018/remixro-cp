@@ -9,7 +9,7 @@ Flux Control Panel (FluxCP) for rAthena servers.
 
 # RemixRO Control Panel - Tailwind Edition
 
-![Banner](./themes/github.png)
+![Banner](./github.png)
 
 A modern, lightweight control-panel built using **Tailwind CSS**. This version includes additional features such as integrated **donation processing** and **Discord Webhook** support for real-time notifications.
 
