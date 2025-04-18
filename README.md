@@ -7,7 +7,7 @@ FluxCP
 
 Flux Control Panel (FluxCP) for rAthena servers.
 
-# 🎁 Donation Platform - TailwindCSS Edition
+# RemixRO Control Panel - Tailwind Edition
 
 ![Banner](./themes/github.png)
 
